@@ -30,6 +30,12 @@ namespace PassportCheckpoint
                         {
                             var json = await content.ReadAsStringAsync();
                             var data = System.Text.Json.JsonSerializer.Deserialize<AutoCompleteResponse>(json);
+                            if (data?.characters.Count == 0)
+                            {
+                                Plugin.Log.Info($"{playerName}@{playerWorld} does not have a Tomestone profile");
+                                Plugin.ChatGui.PrintError($"{playerName}@{playerWorld} does not have a Tomestone profile");
+                                return string.Empty;
+                            }
                             Character character = data.characters.FirstOrDefault(ch => ch.item.serverName.Equals(playerWorld, StringComparison.OrdinalIgnoreCase))
                                 ?? throw new Exception($"No player {playerName} in {playerWorld} exists");
                             var tomestoneCharUrl = @"https://tomestone.gg" + character.href + "/";

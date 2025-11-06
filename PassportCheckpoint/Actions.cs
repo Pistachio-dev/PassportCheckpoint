@@ -28,7 +28,10 @@ namespace PassportCheckpoint
         public async Task OpenTomestonePage(string playerName, string playerWorld)
         {
             var url = await plugin.DataFetcher.FetchURL(playerName, playerWorld);
-            ShellStart(url);
+            if (!url.IsNullOrEmpty())
+            {
+                ShellStart(url);
+            }            
         }        
 
         public static void ShellStart(string s)

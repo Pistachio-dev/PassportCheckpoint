@@ -1,6 +1,6 @@
 {
-  "AssemblyVersion": "0.1.0.0",
+  "AssemblyVersion": "0.1.0.2",
   "DalamudApiLevel": 13,
-  "ChangeLog": "- Initial release.",
+  "ChangeLog": "- If the player does not have a Tomestone profile, the plugin will print that instead of just \"something went wrong\".",
   "IsTest": false
 }
