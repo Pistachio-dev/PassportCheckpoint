@@ -15,7 +15,5 @@ namespace PassportCheckpoint
         {
             return Plugin.Data.GetExcelSheet<World>().GetRow(rowId).Name.ToString();
         }
-
-        public static unsafe ReadOnlySeStringSpan NameToSeString(Span<byte> name) => new((byte*)Unsafe.AsPointer(ref name[0]));
     }
 }

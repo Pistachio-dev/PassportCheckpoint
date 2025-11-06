@@ -65,17 +65,6 @@ namespace PassportCheckpoint
                     Priority = 420,
                     Name = "Check Tomestone"
                 });
-
-                args.AddMenuItem(new()
-                {
-                    OnClicked = (args) =>
-                    {
-                        _ = plugin.Actions.OpenPartyTomestonePages();
-                    },
-                    PrefixChar = 'P',
-                    Priority = 421,
-                    Name = "Check Tomestone for all party members"
-                });
             }
         }
 

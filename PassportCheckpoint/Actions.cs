@@ -18,56 +18,18 @@ namespace PassportCheckpoint
 {
     public class Actions
     {
-
-
         private readonly Plugin plugin;
 
         public Actions(Plugin plugin)
         {
             this.plugin = plugin;
         }
+
         public async Task OpenTomestonePage(string playerName, string playerWorld)
         {
             var url = await plugin.DataFetcher.FetchURL(playerName, playerWorld);
             ShellStart(url);
-        }
-
-        public async Task OpenPartyTomestonePages()
-        {
-            var players = GetPlayersInPartyOrAlliance();
-            List<Task> tasks = new();
-
-            foreach ((var name, var world) in players)
-            {
-                Plugin.Log.Info($"Opening tomestone page for {name}@{world}");
-                tasks.Add(OpenTomestonePage(name, world));
-            }
-
-            await Task.WhenAll(tasks);
-        }
-
-        private unsafe List<(string playerName, string playerWorld)> GetPlayersInPartyOrAlliance()
-        {
-            var groupManager = GroupManager.Instance();
-
-            List<(string name, string world)> players = new();
-
-            Plugin.Log.Info($"Starting party data retrieval");
-
-            if (!TryGetAddonByName<AddonPartyList>("_PartyList", out AddonPartyList* addonPartyListPtr))
-            {
-                Plugin.Log.Warning("Can't find party list addon");
-                return players;
-            }
-
-            foreach (var player in addonPartyListPtr->PartyMembers)
-            {
-                Plugin.Log.Warning(player.Name->GetText().ExtractText());
-            }
-
-            return players;
-
-        }
+        }        
 
         public static void ShellStart(string s)
         {
@@ -94,26 +56,6 @@ namespace PassportCheckpoint
                 {
                     Plugin.Log.Error(ex.Message + "\n" + ex.StackTrace);
                 }
-            }
-        }
-
-        private unsafe Span<PartyMember> GetPartyMemberSpan()
-        {
-            return GroupManager.Instance()->MainGroup.PartyMembers[..GroupManager.Instance()->MainGroup.MemberCount];
-        }
-
-        public static unsafe bool TryGetAddonByName<T>(string Addon, out T* AddonPtr) where T : unmanaged
-        {
-            var a = Plugin.GameGui.GetAddonByName(Addon, 1);
-            if (a == IntPtr.Zero)
-            {
-                AddonPtr = null;
-                return false;
-            }
-            else
-            {
-                AddonPtr = (T*)a.Address;
-                return true;
             }
         }
     }
