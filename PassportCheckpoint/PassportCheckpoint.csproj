@@ -10,5 +10,8 @@
   <ItemGroup>
     <Content Include="NewestRelease.json" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
+  </ItemGroup>
 
 </Project>
