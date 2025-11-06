@@ -9,5 +9,7 @@
     "prog",
     "raiding",
     "savage"
-  ]
+  ],
+  "InternalName": "PassportCheckpoint",
+  "IconUrl": "https://ffxiv.consolegameswiki.com/mediawiki/images/8/86/Interject.png"
 }

@@ -16,10 +16,19 @@ public sealed class Plugin : IDalamudPlugin
     [PluginService] internal static IClientState ClientState { get; private set; } = null!;
     [PluginService] internal static IDataManager DataManager { get; private set; } = null!;
     [PluginService] internal static IPluginLog Log { get; private set; } = null!;
+    [PluginService] internal static IContextMenu ContextMenu { get; private set; } = null!;
+    [PluginService] internal static IDataManager Data { get; private set; } = null!;
+    [PluginService] internal static IFramework Framework { get; private set; } = null!;
+    [PluginService] internal static IChatGui ChatGui { get; private set; } = null!;
+    [PluginService] internal static IPartyList PartyList { get; private set; } = null!;
+    [PluginService] internal static IGameGui GameGui { get; private set; } = null!;
 
     private const string CommandName = "/passportcheckpoint";
 
     public Configuration Configuration { get; init; }
+    public DataFetcher DataFetcher { get; private set; }
+    public ContextMenuManager ContextMenuManager { get; private set; }
+    public Actions Actions { get; private set; }
 
     public readonly WindowSystem WindowSystem = new("PassportCheckpoint");
     private ConfigWindow ConfigWindow { get; init; }
@@ -27,9 +36,9 @@ public sealed class Plugin : IDalamudPlugin
     public Plugin()
     {
         Configuration = PluginInterface.GetPluginConfig() as Configuration ?? new Configuration();
-
-        // You might normally want to embed resources and load them from the manifest stream
-        var goatImagePath = Path.Combine(PluginInterface.AssemblyLocation.Directory?.FullName!, "goat.png");
+        DataFetcher = new DataFetcher(this);
+        ContextMenuManager = new ContextMenuManager(this);
+        Actions = new Actions(this);
 
         ConfigWindow = new ConfigWindow(this);
 
