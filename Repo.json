@@ -13,11 +13,11 @@
     ],
     "IconUrl": "https://ffxiv.consolegameswiki.com/mediawiki/images/8/86/Interject.png",
     "DalamudApiLevel": 13,
-    "AssemblyVersion": "0.1.0.0",
+    "AssemblyVersion": "0.1.0.1",
     "Changelog": "- Initial release.",
-    "DownloadLinkInstall": "https://github.com/Pistachio-dev/PassportCheckpoint/releases/download/0.1.0.0_release/PassportCheckpoint.zip",
-    "DownloadLinkUpdate": "https://github.com/Pistachio-dev/PassportCheckpoint/releases/download/0.1.0.0_release/PassportCheckpoint.zip",
-    "LastUpdate": 1762443064,
+    "DownloadLinkInstall": "https://github.com/Pistachio-dev/PassportCheckpoint/releases/download/0.1.0.1_release/PassportCheckpoint.zip",
+    "DownloadLinkUpdate": "https://github.com/Pistachio-dev/PassportCheckpoint/releases/download/0.1.0.1_release/PassportCheckpoint.zip",
+    "LastUpdate": 1762445389,
     "InternalName": "PassportCheckpoint"
   }
 ]
