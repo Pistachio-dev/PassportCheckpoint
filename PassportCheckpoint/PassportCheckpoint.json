@@ -1,0 +1,18 @@
+{
+  "Author": "Pistachio Herald",
+  "Name": "Passport Checkpoint",
+  "Punchline": "Catch prog liars red-handed.",
+  "Description": "Right click to get party member tomestone pages.",
+  "ApplicableVersion": "any",
+  "Tags": [
+    "passport",
+    "prog",
+    "raiding",
+    "savage",
+    "tomestone",
+    "party finder",
+    "pf"
+  ],
+  "InternalName": "PassportCheckpoint",
+  "IconUrl": "https://ffxiv.consolegameswiki.com/mediawiki/images/8/86/Interject.png"
+}
