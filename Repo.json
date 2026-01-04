@@ -13,11 +13,11 @@
     ],
     "IconUrl": "https://ffxiv.consolegameswiki.com/mediawiki/images/8/86/Interject.png",
     "DalamudApiLevel": 13,
-    "AssemblyVersion": "0.1.0.1",
-    "Changelog": "- Initial release.",
-    "DownloadLinkInstall": "https://github.com/Pistachio-dev/PassportCheckpoint/releases/download/0.1.0.1_release/PassportCheckpoint.zip",
-    "DownloadLinkUpdate": "https://github.com/Pistachio-dev/PassportCheckpoint/releases/download/0.1.0.1_release/PassportCheckpoint.zip",
-    "LastUpdate": 1762445389,
+    "AssemblyVersion": "0.1.0.2",
+    "Changelog": "- If the player does not have a Tomestone profile, the plugin will print that instead of just \"something went wrong\".",
+    "DownloadLinkInstall": "https://github.com/Pistachio-dev/PassportCheckpoint/releases/download/0.1.0.2_release/PassportCheckpoint.zip",
+    "DownloadLinkUpdate": "https://github.com/Pistachio-dev/PassportCheckpoint/releases/download/0.1.0.2_release/PassportCheckpoint.zip",
+    "LastUpdate": 1767528457,
     "InternalName": "PassportCheckpoint"
   }
 ]
